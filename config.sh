@@ -1,4 +1,3 @@
-MODID=voenabler
 AUTOMOUNT=false
 PROPFILE=true
 POSTFSDATA=false
