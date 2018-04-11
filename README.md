@@ -16,6 +16,7 @@ persist.dbg.ims_volte_enable=1
 <br>persist.radio.calls.on.ims=1
 
 ## Changelog
-2017-08-02 (v1.1): Removed "persist.data.iwlan.enable=true" as this was reported to break WiFi calling on some carriers.
+2018-04-09 (v1.2): Update template for Magisk 15+
+<br>2017-08-02 (v1.1): Removed "persist.data.iwlan.enable=true" as this was reported to break WiFi calling on some carriers.
 <br>2017-08-01 (v1): Switched from using service.sh to system.prop
 <br>2017-07-31 (Beta): Initial commit.
