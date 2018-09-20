@@ -4,8 +4,7 @@ This module enables the VoLTE and VoWiFi options by editing `build.prop`.
 **Important:** VoLTE/VoWiFi will not work if your carrier doesn't support it, even if you install this module.
 
 XDA Thread: [here](https://forum.xda-developers.com/apps/magisk/module-v4-volte-enabler-t3649613)
-
-Guide to **_maybe_** make this work: [here](https://forum.xda-developers.com/oneplus-5t/how-to/guide-volte-vowifi-german-carriers-t3817542)
+<br>Guide to **_maybe_** make this work: [here](https://forum.xda-developers.com/oneplus-5t/how-to/guide-volte-vowifi-german-carriers-t3817542)
 
 ## What does this module change?
 persist.dbg.ims_volte_enable=1 
