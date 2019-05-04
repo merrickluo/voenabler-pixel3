@@ -1,7 +1,6 @@
 id=voenabler
 name=VoEnabler
-version=v1.4
-versionCode=5
+version=v1.5
+versionCode=6
 author=Toucan
 description=Adds settings to build.prop to enable both VoLTE and VoWifi
-minMagisk=17000
