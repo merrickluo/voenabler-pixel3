@@ -17,6 +17,7 @@ persist.dbg.ims_volte_enable=1
 <br>persist.radio.calls.on.ims=1
 
 ## Changelog
+<br>2020-02-02 (v1.6): Update template for Magisk v20.x
 <br>2019-04-05 (v1.5): Update template for Magisk v19.x
 <br>2018-11-25 (v1.4): Removed some white space that may cause issues.
 <br>2018-09-19 (v1.3): Update template for Magisk v17.x
