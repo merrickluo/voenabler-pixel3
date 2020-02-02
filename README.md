@@ -1,3 +1,7 @@
+### Please note that this is a fork of [Toucan-sam](https://github.com/Toucan-Sam/VoEnabler).
+
+I'm updating it whenever possible for my OP5. I have no other devices to validate the module. 
+
 ## VoEnabler
 This module enables the VoLTE and VoWiFi options by editing `build.prop`.
 
