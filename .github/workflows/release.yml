@@ -1,3 +1,5 @@
+name: CI release version as draft
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
@@ -22,7 +24,7 @@ jobs:
       - name: build
         run: ./build.sh -v ${{ steps.get_version.outputs.TAGVERSION }}
       - uses: actions/upload-artifact@v1
-          with:
+        with:
             name: voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
             path: ./voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
 
