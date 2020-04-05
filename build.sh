@@ -9,7 +9,9 @@ createZip() {
     echo "DRYRUN:${DRYRUN}, ${VFILE} not created"
   else
     #create archive
+    echo "creating ${VFILE}"
     zip -r ./${1} META-INF module.prop system.prop customize.sh README.md
+    ls -al *.zip
   fi
 }
 
