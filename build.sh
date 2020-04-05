@@ -29,7 +29,7 @@ FORCE=0
 DRYRUN=0
 LATEST=0
 
-while getopts "dfhv:" option; do
+while getopts "dfhlv:" option; do
   case $option in
   d)
     DRYRUN=1
