@@ -1,16 +1,25 @@
 #!/usr/bin/env bash
 
 ## VoEnabler
-createVersion(){
-	 zip -r ./${VFILE} META-INF module.prop system.prop customize.sh README.md
+createZip() {
+  #remove if force enabled
+  [[ ${2} -eq 1 ]] && [[ -f ${1} ]] && rm -f ${1}
+
+  if [[ ${3} -eq 1 ]]; then
+    echo "DRYRUN:${DRYRUN}, ${VFILE} not created"
+  else
+    #create archive
+    zip -r ./${1} META-INF module.prop system.prop customize.sh README.md
+  fi
 }
 
-usage(){
+usage() {
   echo -e "\n$0:\t [d,f,h,v]"
   echo -e "\t-v\tversion: define version for zip filename."
   echo -e "\t-d\tDryRun: is set, then no zip file is created"
   echo -e "\t-f\tForce, overwrite existing zip if any"
   echo -e "\t-h\tHelp: this help"
+  echo -e "\t-l\tlatest: build zip with latest commit"
 }
 
 #Main
@@ -18,6 +27,7 @@ usage(){
 VERSION=""
 FORCE=0
 DRYRUN=0
+LATEST=0
 
 while getopts "dfhv:" option; do
   case $option in
@@ -31,30 +41,27 @@ while getopts "dfhv:" option; do
     usage
     exit 1
     ;;
+  l)
+    LATEST=1
+    FORCE=1
+    ;;
   v)
     VERSION=$OPTARG
     ;;
   esac
 done
 
-VFILE=voenabler-v${VERSION}.zip
-
-if [[ ! ${VERSION} =~ [0-9]\.[0-9]$ ]]; then
-	echo -e "\nError, VERSION string is incorrect (${VERSION}): expected x.y where x and y are integers\n"
-	exit 1
+#set filename
+if [[ ${LATEST} == 1 ]]; then
+  VFILE=voenabler-latest.zip
+else
+  VFILE=voenabler-v${VERSION}.zip
 fi
 
-if [[ ${FORCE} -eq 1 ]]; then 
-	createVersion ${VERSION}
-else if [[ ${DRYRUN} -eq 0 ]]; then
-	if [[ -f ${VFILE} ]]; then
-		echo "Error, ${VFILE} exists, use -f to overwrite, -h for help"
-		exit 1;
-	else 
-		createVersion ${VERSION}
-	fi
-	else
-	echo "DRYRUN:${DRYRUN}, ${VFILE} not created"	
-	fi
+#check version naming
+if [[ ! ${VERSION} =~ [0-9]\.[0-9]$ ]] && [[ ${LATEST} == 0 ]]; then
+  echo -e "\nError, VERSION string is incorrect (${VERSION}): expected x.y where x and y are integers\n"
+  exit 1
 fi
 
+createZip ${VFILE} ${FORCE} ${DRYRUN}
