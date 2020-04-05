@@ -3,6 +3,12 @@
 I'm updating it whenever possible for my OP5. I have no other devices to validate the module. 
 
 ## VoEnabler
+
+[![HitCount](http://hits.dwyl.com/{edgd1er}/{voenabler}.svg)](http://hits.dwyl.com/{edgd1er}/{voenabler})
+![CI](https://github.com/edgd1er/voenabler/workflows/CI/badge.svg)
+![CI](https://img.shields.io/github/release/edgd1er/voenabler.svg)
+
+
 This module enables the VoLTE and VoWiFi options by editing `build.prop`.
 
 **Important:** VoLTE/VoWiFi will not work if your carrier doesn't support it, even if you install this module.
