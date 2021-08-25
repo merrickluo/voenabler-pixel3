@@ -1,3 +1,18 @@
+## Enable VoLTE for Pixel 3 w/ China Unicom
+
+* Based on voenabler, Edit `build.prop` so system shows the VoLTE toggle.
+* Edit `mbn_sw.txt` so that it actually work with China Unicom. Source: [a random post](https://www.uso.cn/post/view/54257)
+
+## Check if it works
+
+1. Reboot after flash with magisk
+2. Toggle the VoLTE option in Network -> SIMs -> China Unicom
+3. Call someone, cellular network should keep showing LTE, and the call screen has a [HD] icon.
+
+Note: of course you need to enable VoLTE first at China Unicom.
+
+## Original README
+
 ### Please note that this is a fork of [Toucan-sam](https://github.com/Toucan-Sam/VoEnabler).
 
 I'm updating it whenever possible for my OP5. I have no other devices to validate the module. 
