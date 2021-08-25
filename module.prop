@@ -1,6 +1,7 @@
-id=voenabler
-name=VoEnabler
-version=v1.8
-versionCode=7
-author=Toucan
-description=Adds settings to build.prop to enable: VoLTE & VoWifi & RCS
+id=voenabler-pixel3-cu
+name=VoEnabler For Pixel 3 w/ China Unicom
+version=v0.1
+versionCode=1
+author=A.I.
+description=Enable VoLTE on Pixel 3 w/ China Unicom configs.
+minMagisk=1500
