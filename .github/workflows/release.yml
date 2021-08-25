@@ -24,8 +24,9 @@ jobs:
         run: ./build.sh -v ${{ steps.get_version.outputs.TAGVERSION }}
       - uses: actions/upload-artifact@v1
         with:
-            name: voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
-            path: ./voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
+            name: voenabler-pixel3-cu-v${{ steps.get_version.outputs.TAGVERSION }}.zip
+            path: ./
+voenabler-pixel3-cu-v${{ steps.get_version.outputs.TAGVERSION }}.zip
 
       - name: Create Release
         id: create_release
@@ -49,6 +50,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
-          asset_name: voenabler-v${{ steps.get_version.outputs.TAGVERSION }}.zip
+          asset_path: ./
+voenabler-pixel3-cu-v${{ steps.get_version.outputs.TAGVERSION }}.zip
+          asset_name:
+voenabler-pixel3-cu-v${{ steps.get_version.outputs.TAGVERSION }}.zip
           asset_content_type: application/zip
