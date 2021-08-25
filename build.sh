@@ -10,7 +10,7 @@ createZip() {
   else
     #create archive
     echo "creating ${VFILE}"
-    zip -r ./${1} META-INF module.prop system.prop customize.sh README.md
+    zip -r ./${1} META-INF module.prop system.prop customize.sh README.md system
     ls -al *.zip
   fi
 }
@@ -26,6 +26,7 @@ usage() {
 
 #Main
 #process options
+NAME="voenabler-pixel3-cu"
 VERSION=""
 FORCE=0
 DRYRUN=0
@@ -55,9 +56,9 @@ done
 
 #set filename
 if [[ ${LATEST} == 1 ]]; then
-  VFILE=voenabler-latest.zip
+  VFILE=${NAME}-latest.zip
 else
-  VFILE=voenabler-v${VERSION}.zip
+  VFILE=${NAME}-v${VERSION}.zip
 fi
 
 #check version naming
